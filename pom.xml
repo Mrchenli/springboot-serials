@@ -20,6 +20,7 @@
 		<module>charpter06-exceptionhandler</module>
 		<module>charpter07-jdbctemplate</module>
 		<module>charpter08-datasourceconfigmulti</module>
+		<module>charpter09-redis</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
