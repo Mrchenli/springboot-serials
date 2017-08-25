@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.mrchenli.springboot</groupId>
-	<artifactId>charpter08-datasourceconfigmulti</artifactId>
+	<artifactId>charpter09-redis</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>charpter08-datasourceconfigmulti</name>
+	<name>charpter09-redis</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -24,21 +24,11 @@
 	</properties>
 
 	<dependencies>
-
-
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc14</artifactId>
-			<version>11.2.0.3</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<artifactId>spring-boot-starter-redis</artifactId>
+			<version>1.3.2.RELEASE</version>
 		</dependency>
-
 	</dependencies>
-
-
 
 </project>

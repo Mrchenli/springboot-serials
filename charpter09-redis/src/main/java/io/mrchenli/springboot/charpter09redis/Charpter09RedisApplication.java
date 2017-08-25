@@ -1,13 +1,12 @@
-package io.mrchenli.springboot.charpter01helloworld;
+package io.mrchenli.springboot.charpter09redis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Charpter01HelloworldApplication {
+public class Charpter09RedisApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Charpter01HelloworldApplication.class, args);
+		SpringApplication.run(Charpter09RedisApplication.class, args);
 	}
-
 }
