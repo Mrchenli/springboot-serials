@@ -21,6 +21,7 @@
 		<module>charpter07-jdbctemplate</module>
 		<module>charpter08-datasourceconfigmulti</module>
 		<module>charpter09-redis</module>
+		<module>charpter10-mybatis</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
