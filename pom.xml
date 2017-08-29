@@ -22,6 +22,7 @@
 		<module>charpter08-datasourceconfigmulti</module>
 		<module>charpter09-redis</module>
 		<module>charpter10-mybatis</module>
+		<module>charpter11-schedule</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
