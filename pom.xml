@@ -26,6 +26,7 @@
 		<module>charpter12-async</module>
 		<module>charpter13-log4j</module>
 		<module>charpter14-logback-profile</module>
+		<module>charpter15-weblayer-log-aspect</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
