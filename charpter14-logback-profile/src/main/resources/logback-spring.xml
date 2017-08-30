@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug ="false">
+
+    <!--用于区分不同系统的日志-->
+    <contextName>charpter14-log4j-profile</contextName>
+    <property name ="log.error" value="logs/error.log"/>
+    <property name="log.mylog" value="logs/mylog.log"/>
+    <property name="log.root" value="logs/root.log"/>
+
+    <!--控制台的appender-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--输出到文件的appender-->
+    <appender name="root" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.root}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>root.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="errorfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.error}</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>error.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="mylog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.mylog}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>mylog.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+
+    <root level="ERROR">
+        <appender-ref ref="root"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="errorfile"/>
+    </root>
+
+    <logger name="io.mrchenli.springboot.charpter14logbackprofile" level="DEBUG" additivity="false"><!--向上级传递?-->
+        <appender-ref ref="mylog"/>
+    </logger>
+
+    <springProfile name="test">
+        <logger name = "io.mrchenli.springboot.charpter14logbackprofile" level="DEBUG"/>
+    </springProfile>
+    <springProfile name="dev">
+        <logger name = "io.mrchenli.springboot.charpter14logbackprofile" level="INFO"/>
+    </springProfile>
+    <springProfile name="prod">
+        <logger name="io.mrchenli.springboot.charpter14logbackprofile" level="ERROR"/>
+    </springProfile>
+
+</configuration>
