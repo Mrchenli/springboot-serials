@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title>hello</title>
+</head>
+<body>
+<h1 th:text="${info}" />
+<div>
+    <!-- <img alt="这是图片" src="/img/001.png"/> -->
+    <img alt="验证码" onclick = "this.src='/defaultKaptcha?d='+new Date()*1" src="/defaultKaptcha" />
+</div>
+<form action="/login">
+    <input type="text" name="vrifyCode" />
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>
